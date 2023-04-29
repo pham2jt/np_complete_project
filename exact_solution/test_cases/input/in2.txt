@@ -1,0 +1,6 @@
+5
+a d
+d c
+b d
+e a
+e d
