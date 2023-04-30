@@ -1,5 +1,5 @@
 import itertools
-
+import time
 def min_vertex_cover(edges):
     # Create a list of all possible vertex combinations
     vertices = set()
@@ -26,12 +26,15 @@ def check_np(edges, nodes):
 
 
 def main():
+    startTime = time.time()
     vertices = set()
     n = int(input())
     edges = [input().split(" ") for _ in range(n)]
     result = min_vertex_cover(edges)
     if result:
         print (*result, sep = " ")
+    executionTime = (time.time() - startTime)
+    print('Execution time in seconds: ' + str(executionTime))
 
 if __name__ == "__main__":
     main()
