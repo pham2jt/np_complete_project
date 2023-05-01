@@ -7,12 +7,13 @@ def vertex_cover_approx(edges):
     
     # Create a dictionary to keep track of the degree of each vertex
     degrees = {}
-    for u, v in edges:
-        degrees[u] = degrees.get(u, 0) + 1
-        degrees[v] = degrees.get(v, 0) + 1
-    
+
     # Loop until all edges are covered
     while edges:
+        for u, v in edges:
+            degrees[u] = degrees.get(u, 0) + 1
+            degrees[v] = degrees.get(v, 0) + 1
+    
         # Pick the vertex with the highest degree
         u = max(degrees, key=degrees.get)
         
@@ -22,11 +23,6 @@ def vertex_cover_approx(edges):
         # Remove all edges incident on u
         edges = [e for e in edges if u not in e]
         
-        # Update the degrees of remaining vertices
-        degrees = {}
-        for u, v in edges:
-            degrees[u] = degrees.get(u, 0) + 1
-            degrees[v] = degrees.get(v, 0) + 1
     
     return cover
 
