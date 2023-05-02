@@ -1,5 +1,5 @@
 import random
-f = open("input/in5.txt", "w")
+f = open("input/in6.txt", "w")
 n = int(input("input a number"))
 f.write(str(n) + "\n")
 for _ in range(n):
